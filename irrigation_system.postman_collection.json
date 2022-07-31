@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "500e6981-5e5b-46c5-b333-85600194aabe",
+		"name": "irrigation_system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17707780"
+	},
+	"item": [
+		{
+			"name": "add crop",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\":\"Cotton\",\r\n   \"waterAmountPerSeason\":600,\r\n   \"totalGrowingPeriod\":100,\r\n   \"daysBetweenEachPeriod\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/crop/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crop",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add plot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"crop\":1,\r\n   \"area\":100,\r\n   \"cultivatedDate\":\"2022-07-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/plot/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"plot",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add sensor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\":\"sensor 2\",\r\n   \"sensorStatus\":0,\r\n   \"plotId\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/sensor/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sensor",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "configure slots automatically",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"plotId\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/slot/sensor/configure-automatically",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"slot",
+						"sensor",
+						"configure-automatically"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "irrigate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"slotId\":11\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/slot/sensor/irrigate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"slot",
+						"sensor",
+						"irrigate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get plots details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/plot/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"plot",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit plot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":4,\r\n   \"crop\":2,\r\n   \"area\":100,\r\n   \"cultivatedDate\":\"2022-07-10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/plot/edit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"plot",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
