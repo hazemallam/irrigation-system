@@ -266,7 +266,7 @@ and total area**
 }
 ```
 
-## 6. Send Signal Irrigate A Slot 
+## 6. Send Signal To Irrigate A Slot 
 
 **URL** : `http://localhost:8080/slot/sensor/irrigate`
 
